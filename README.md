@@ -13,4 +13,6 @@
 
 `__init__.py`、`__main__.py` 是 Python 包要求的特殊文件名；历法模块使用 `calendar.py` 的正确拼写。
 
-依赖见 [`requirements.txt`](requirements.txt)。排盘时须提供带时区的出生时间与出生地经度；南半球还须提供负纬度。南半球大运尚未定义。
+依赖见 [`requirements.txt`](requirements.txt)。调用底层公历排盘函数时，须提供带时区的出生时间与出生地经度；南半球还须提供负纬度。南半球大运尚未定义。
+
+中国出生者可运行 `python -m liqi`，按提示输入标准北京时间（`YYYY-MM-DD HH:MM`）及出生地东经度数，直接取得真太阳时和四柱。若原始记录采用夏令时，先核实并换算为标准北京时间。

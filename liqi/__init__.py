@@ -10,6 +10,12 @@ def solar_to_four_pillars(*args, **kwargs):
     return convert(*args, **kwargs)
 
 
+def beijing_time_to_four_pillars(*args, **kwargs):
+    """固定北京时间年月日时分与出生地经度转四柱。"""
+    from .calendar import beijing_time_to_four_pillars as convert
+    return convert(*args, **kwargs)
+
+
 def lunar_to_four_pillars(*args, **kwargs):
     """农历转四柱；需要 requirements.txt 中的 lunar_python。"""
     from .calendar import lunar_to_four_pillars as convert
@@ -23,4 +29,5 @@ def reference_da_yun(*args, **kwargs):
 
 
 __all__ = ["analyze_chart", "true_solar_time",
-           "solar_to_four_pillars", "lunar_to_four_pillars", "reference_da_yun"]
+           "solar_to_four_pillars", "beijing_time_to_four_pillars",
+           "lunar_to_four_pillars", "reference_da_yun"]

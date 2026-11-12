@@ -98,6 +98,15 @@ def solar_to_four_pillars(birth, longitude, latitude=None):
     }
 
 
+def beijing_time_to_four_pillars(year, month, day, hour, minute, longitude):
+    """中国出生资料：固定北京时间（UTC+8）与出生地经度排四柱。
+
+    输入须已是标准北京时间；历史夏令时钟表记录须先核实并换算。
+    """
+    birth = datetime(year, month, day, hour, minute, tzinfo=CALENDAR_TIMEZONE)
+    return solar_to_four_pillars(birth, longitude)
+
+
 def lunar_to_four_pillars(lunar_year, lunar_month, lunar_day,
                           hour, minute, second, longitude, is_leap=False,
                           latitude=None):
